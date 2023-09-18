@@ -1,0 +1,14 @@
+import color_sensor
+from hub import port
+import color
+import runloop
+from hub import light_matrix
+
+async def main():
+	if color_sensor.color(port.A) is color.BLUE:
+		await light_matrix.write("BLUE")
+	if color_sensor.color(port.A) is color.YELLOW:
+		await light_matrix.write("YELLOW")
+	if color_sensor.color(port.A) is color.GREEN:
+		await light_matrix.write("GREEN")
+runloop.run(main())
