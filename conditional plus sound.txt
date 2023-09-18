@@ -1,0 +1,14 @@
+import color_sensor
+from hub import port
+import color
+import runloop
+from hub import sound
+
+async def main():
+	if color_sensor.color(port.A) is color.BLUE:
+		await sound.beep(400, 1000, 100)
+	if color_sensor.color(port.A) is color.YELLOW:
+		await sound.beep(500,1000,100)
+	if color_sensor.color(port.A) is color.GREEN:
+		await sound.beep(600,1000,100)
+runloop.run(main())

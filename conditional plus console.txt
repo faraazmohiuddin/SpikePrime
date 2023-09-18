@@ -1,0 +1,13 @@
+import color_sensor
+from hub import port
+import color
+import runloop
+
+async def main():
+	if color_sensor.color(port.A) is color.BLUE:
+		print("Blue detected")
+	if color_sensor.color(port.A) is color.YELLOW:
+		print("Yellow detected")
+	if color_sensor.color(port.A) is color.GREEN:
+		print("Green detected")
+runloop.run(main())
