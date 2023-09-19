@@ -1,0 +1,12 @@
+from hub import light_matrix
+from hub import port
+import runloop
+import motor
+
+async def main():
+	# write your code here
+	await light_matrix.write("Hi!")
+	#motor.run(port.A,500)
+	motor.run_for_degrees(port.B,-720,60)
+	motor.run_for_degrees(port.A,-720,60)
+runloop.run(main())
