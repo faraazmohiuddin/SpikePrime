@@ -1,7 +1,0 @@
-import runloop
-from hub import light_matrix
-
-async def main():
-    await light_matrix.write("Hi!")
-
-runloop.run(main())
